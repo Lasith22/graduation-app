@@ -11,18 +11,19 @@ const SuccessModal = (props) => {
       onOk={handleModalClose}
       onCancel={handleModalClose}
       closable={false}
+      width={350}
       bodyStyle={{
-        padding: '40px 40px 54px 54px',
+        padding: '20px  ',
         width: '100%',
         height: '100%',
       }}
     >
       <div className="flex flex-col justify-center items-center">
         <img src={SuccessIcon} alt="" />
-        <h1 className="text-[#576573] font-mainTextStyle text-[18px] font-primary leading-custom tracking-custom mt-[16px] mb-[8px]">
+        <h1 className="text-[#576573] font-mainTextStyle text-[18px] font-primary font-bold   mt-[16px] mb-[8px]">
           Success
         </h1>
-        <h1 className="text-[#A8B4BF] font-mainTextStyle text-[14px] font-primary  leading-custom tracking-custom mb-[24px]">
+        <h1 className="text-[#A8B4BF] font-mainTextStyle text-[14px] font-primary font-semibold  leading-custom tracking-custom mb-[24px]">
           {confirmMsg}
         </h1>
 
