@@ -30,7 +30,7 @@ const SuccessModal = (props) => {
         <button
           onClick={handleModalClose}
           type="button"
-          className="flex justify-center items-center w-[139px] h-[48px] rounded-[8px] p-[16px] bg-[#E9EDF2] text-[#576573] font-primary text-[16px] font-custom leading-custom tracking-custom cursor-pointer"
+          className="flex justify-center items-center w-[139px] h-[48px] rounded-[8px] p-[16px] bg-[#E9EDF2] text-[#576573] font-primary font-semibold text-[16px]  cursor-pointer"
         >
           Ok
         </button>
