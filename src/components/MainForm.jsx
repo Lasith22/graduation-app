@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
-import { Input, Spin } from 'antd';
+import { Input, message, Spin } from 'antd';
 import { Formik, Form } from 'formik';
 import { db } from '../firebase';
-import { addDoc, collection, doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import SuccessModal from './SuccessModal';
 
 const MainForm = () => {
   const [loading, setLoading] = useState(false);
   const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const addDataToFirestore = async (values) => {
+  const addDataToFirestore = async (values, resetForm) => {
     try {
       setLoading(true);
       const docRef = doc(db, 'studentGraduationPhotos', values.examNumber);
@@ -21,9 +21,10 @@ const MainForm = () => {
         homeAddress: values.homeAddress,
       });
       setIsModalVisible(true);
+      resetForm();
     } catch (error) {
       console.error('Error adding document: ', error);
-      setStatus(`Error: ${error.message}`);
+      message.error(`Error submitting form: ${error.message}`);
     } finally {
       setLoading(false);
     }
@@ -60,7 +61,9 @@ const MainForm = () => {
       <Spin spinning={loading} tip="submiting..">
         <Formik
           initialValues={initialValues}
-          onSubmit={(values) => addDataToFirestore(values)}
+          onSubmit={(values, { resetForm }) =>
+            addDataToFirestore(values, resetForm)
+          }
         >
           {({ values, setFieldValue }) => (
             <Form>
@@ -106,7 +109,6 @@ const MainForm = () => {
                     placeholder="07X XXX XXXX"
                     className={inputClass}
                     style={inputStyle}
-                    required
                   />
                 </div>
 
@@ -158,7 +160,7 @@ const MainForm = () => {
           )}
         </Formik>
       </Spin>
-      <button onClick={() => setIsModalVisible(true)}>Kl</button>
+
       <SuccessModal
         handleModalClose={handleModalClose}
         isModalVisible={isModalVisible}
