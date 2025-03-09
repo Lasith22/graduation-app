@@ -4,3 +4,8 @@
 @theme {
   --font-primary: 'Manrope', 'sans-serif';
 }
+
+/* Custom background images */
+.bg-banner-image {
+  background-image: url('../assets/MainImage.png');
+}
