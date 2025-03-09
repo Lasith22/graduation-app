@@ -46,7 +46,7 @@ const MainForm = () => {
   const inputClass =
     'text-[#A8B4BF] text-[13px] font-primary font-bold placeholder-[#A8B4BF]';
 
-  const labelClass = 'text-[#576573] font-primary text-[16px] font-bold';
+  const labelClass = 'text-[#576573] font-primary text-[15px] font-bold';
 
   const initialValues = {
     studentName: '',
