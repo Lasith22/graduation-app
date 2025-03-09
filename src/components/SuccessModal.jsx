@@ -11,9 +11,9 @@ const SuccessModal = (props) => {
       onOk={handleModalClose}
       onCancel={handleModalClose}
       closable={false}
-      width={350}
+      width={330}
       bodyStyle={{
-        padding: '20px  ',
+        padding: '10px  ',
         width: '100%',
         height: '100%',
       }}
