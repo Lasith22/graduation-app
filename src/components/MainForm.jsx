@@ -76,6 +76,17 @@ const MainForm = () => {
             rows={3}
           />
         </div>
+
+        {/* submit button */}
+        <button
+          className="bg-[#2352D8] text-white font-primary font-bold text-[18px] py-[15px] rounded-[8px] hover:bg-[#FF4D4D] transition-all"
+          style={{
+            cursor: 'pointer',
+            border: 'none',
+          }}
+        >
+          Submit
+        </button>
       </div>
     </div>
   );
