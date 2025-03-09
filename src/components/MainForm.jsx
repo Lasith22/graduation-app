@@ -147,7 +147,7 @@ const MainForm = () => {
                 {/* submit button */}
                 <button
                   type="submit"
-                  className="bg-[#2352D8] text-white font-primary font-bold text-[18px] py-[15px] rounded-[8px] hover:bg-[#FF4D4D] transition-all"
+                  className="bg-[#2352D8] text-white font-primary font-bold text-[18px] py-[15px] rounded-[8px] transition-all"
                   style={{
                     cursor: 'pointer',
                     border: 'none',
