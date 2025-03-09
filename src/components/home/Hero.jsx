@@ -5,7 +5,6 @@ const Hero = () => {
   return (
     <div className="w-full relative">
       <img src={MainLogo} alt="Hero Image" className="w-full object-contain" />
-      {/* Overlay with gradient, opacity, and shadow */}
       <div
         className="absolute inset-0"
         style={{
