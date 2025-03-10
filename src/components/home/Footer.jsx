@@ -2,9 +2,9 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-teal-900 text-white py-8 font-primary">
+    <footer className="w-full bg-[#0F3D47] text-white py-8 font-primary">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
           {/* Advertising Section */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Advertising</h3>
@@ -13,15 +13,16 @@ const Footer = () => {
           {/* Contact Us Section */}
           <div>
             <h3 className="text-xl font-semibold mb-4">Contact us</h3>
-            <div className="space-y-2">
+            <div className="md:space-y-2">
               <p>Event Lanka - Madushanka Udara</p>
-              <p>077 1 16 17 18</p>
-              <p>076 675 98 55</p>
+              <div className="flex  items-start justify-start gap-1.5 mt-2">
+                <p>077 1 16 17 18</p>-<p>076 675 98 55</p>
+              </div>
             </div>
           </div>
 
           {/* More Information Section */}
-          <div>
+          <div className=" hidden sm:block">
             <h3 className="text-xl font-semibold mb-4">More Informations</h3>
             <ul className="space-y-2">
               <li>
