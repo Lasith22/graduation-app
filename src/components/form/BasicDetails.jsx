@@ -17,6 +17,7 @@ const BasicDetails = (props) => {
     'text-[#A8B4BF] text-[13px] font-primary font-bold placeholder-[#A8B4BF]';
 
   const labelClass = 'text-[#576573] font-primary text-[15px] font-bold';
+
   return (
     <div className="flex flex-col gap-[24px]">
       {/* Student's Name */}

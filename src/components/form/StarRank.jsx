@@ -5,7 +5,11 @@ import StarRankImage2 from '../../assets/starRanks/Star2.png';
 import StarRankImage3 from '../../assets/starRanks/Star3.png';
 import StarRankImage4 from '../../assets/starRanks/Star4.png';
 
-const StarRank = () => {
+const StarRank = (props) => {
+  const { values, setFieldValue } = props;
+  const handleCardClick = (value) => {
+    setFieldValue('starRank', value);
+  };
   return (
     <div className="">
       {/* Date Selection */}
@@ -55,37 +59,57 @@ const StarRank = () => {
           </Space>
         </Radio.Group>
       </div>
-
+      {/* stars section */}
       <div className="flex justify-start items-center">
         <h1 className=" text-2xl">Stars Rank</h1>{' '}
         <span className="text-red-500 mx-1 text-2xl">*</span>
       </div>
-      <Radio.Group>
+      <Radio.Group
+        onChange={(e) => setFieldValue('starRank', e.target.value)}
+        value={values.starRank}
+      >
+        // Only showing the relevant part that needs fixing
         <div className="grid md:grid-cols-4 grid-cols-2 gap-4 mt-10">
-          <div className="flex flex-col items-center gap-3">
+          {/* Star Rank */}
+          <div
+            onClick={() => handleCardClick('Star')}
+            className="flex flex-col items-center gap-3 cursor-pointer"
+          >
             <img src={StarRankImage1} alt="" />
-
             <h1 className="text-2xl font-primary font-semibold">Star Rank</h1>
-            <Radio />
+            <Radio value="Star" />
           </div>
 
-          <div className="flex flex-col items-center gap-3">
+          {/* Silver Rank */}
+          <div
+            onClick={() => handleCardClick('Silver')}
+            className="flex flex-col items-center gap-3 cursor-pointer"
+          >
             <img src={StarRankImage2} alt="" />
-
-            <h1 className="text-2xl font-primary font-semibold">Star Rank</h1>
-            <Radio />
+            <h1 className="text-2xl font-primary font-semibold">Silver Rank</h1>
+            <Radio value="Silver" />
           </div>
-          <div className="flex flex-col items-center gap-3">
+
+          {/* Golden Rank */}
+          <div
+            onClick={() => handleCardClick('Golden')}
+            className="flex flex-col items-center gap-3 cursor-pointer"
+          >
             <img src={StarRankImage3} alt="" />
-
-            <h1 className="text-2xl font-primary font-semibold">Star Rank</h1>
-            <Radio />
+            <h1 className="text-2xl font-primary font-semibold">Golden Rank</h1>
+            <Radio value="Golden" />
           </div>
-          <div className="flex flex-col items-center gap-3">
-            <img src={StarRankImage4} alt="" />
 
-            <h1 className="text-2xl font-primary font-semibold">Star Rank</h1>
-            <Radio />
+          {/* Diamond Rank */}
+          <div
+            onClick={() => handleCardClick('Diamond')}
+            className="flex flex-col items-center gap-3 cursor-pointer"
+          >
+            <img src={StarRankImage4} alt="" />
+            <h1 className="text-2xl font-primary font-semibold">
+              Diamond Rank
+            </h1>
+            <Radio value="Diamond" />
           </div>
         </div>
       </Radio.Group>
