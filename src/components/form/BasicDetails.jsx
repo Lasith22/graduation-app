@@ -70,7 +70,6 @@ const BasicDetails = (props) => {
           placeholder="Enter exam number"
           className={inputClass}
           style={inputStyle}
-          required
         />
       </div>
 
