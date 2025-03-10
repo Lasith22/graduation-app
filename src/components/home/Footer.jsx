@@ -1,14 +1,14 @@
 import React from 'react';
+import Footer1 from '../../assets/footer/1.png';
+import Footer2 from '../../assets/footer/Footer2.png';
 
 const Footer = () => {
   return (
     <footer className="w-full bg-[#0F3D47] text-white py-8 font-primary">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-          {/* Advertising Section */}
-          <div>
-            <h3 className="text-xl font-semibold mb-4">Advertising</h3>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2">
+          {/* Logo Section */}
+          <img src={Footer1} alt="" />
 
           {/* Contact Us Section */}
           <div>
@@ -42,6 +42,8 @@ const Footer = () => {
               </li>
             </ul>
           </div>
+
+          <img src={Footer2} alt="" className="mt-5 md:mt-0" />
         </div>
       </div>
     </footer>

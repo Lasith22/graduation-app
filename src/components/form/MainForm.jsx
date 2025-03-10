@@ -42,7 +42,7 @@ const MainForm = () => {
           studentName: values.studentName,
           phoneNumber: values.phoneNumber,
           whatsappNumber: values.whatsappNumber,
-          examNumber: values.examNumber,
+          examNumber: Number(values.examNumber),
           homeAddress: values.homeAddress,
           attendingDate: values.attendingDate,
           attendingTime: values.attendingTime,

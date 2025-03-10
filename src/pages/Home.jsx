@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/home/Hero';
 import IntroDuction from '../components/home/IntroDuction';
 import Footer from '../components/home/Footer';
+import PowerdBy from '../components/home/PowerdBy';
 
 const Home = () => {
   return (
@@ -9,6 +10,7 @@ const Home = () => {
       <Hero />
       <IntroDuction />
       <Footer />
+      <PowerdBy />
     </>
   );
 };
