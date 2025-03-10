@@ -9,7 +9,7 @@ const PhotoFrame = (props) => {
   };
 
   return (
-    <div className="mb-8">
+    <div className="mb-8 font-primary">
       <div className="flex items-center mb-2">
         <h2 className="text-lg font-medium">
           සම්මාන ඡායාරූප රමුව (Graduation Photo)
