@@ -24,6 +24,17 @@ const IntroDuction = () => {
           </h1>
         </div>
       </div>
+      <div className="flex flex-col md:flex-row  justify-between md:items-center mt-10 gap-4">
+        <h1 className="text-sm md:text-xl text-start font-primary font-medium text-[#D32727] leading-normal tracking-tight-[1.3px]">
+          * Indicates required questions
+        </h1>
+        <button
+          type="submit"
+          className="flex justify-center items-center h-[34px] rounded-[4px] p-[12px] gap-[10px] bg-[#46ADC2] text-[#FFF] font-primary text-[18px] font-bold cursor-pointer"
+        >
+          Fill the Application
+        </button>
+      </div>
     </div>
   );
 };
