@@ -4,6 +4,7 @@ import StarRankImage1 from '../../assets/starRanks/Star1.png';
 import StarRankImage2 from '../../assets/starRanks/Star2.png';
 import StarRankImage3 from '../../assets/starRanks/Star3.png';
 import StarRankImage4 from '../../assets/starRanks/Star4.png';
+import { ErrorMessage } from 'formik';
 
 const StarRank = (props) => {
   const { values, setFieldValue } = props;
@@ -20,6 +21,7 @@ const StarRank = (props) => {
         </label>
         <Radio.Group
           onChange={(e) => setFieldValue('attendingDate', e.target.value)}
+          value={values.attendingDate}
           className="w-full"
         >
           <Space direction="vertical" className="w-full">
@@ -35,6 +37,11 @@ const StarRank = (props) => {
             </Radio>
           </Space>
         </Radio.Group>
+        <ErrorMessage
+          name="attendingDate"
+          component="div"
+          className="text-red-500 text-sm mt-1 font-primary font-bold"
+        />
       </div>
 
       {/* Time Selection */}
@@ -49,6 +56,7 @@ const StarRank = (props) => {
         </p>
         <Radio.Group
           onChange={(e) => setFieldValue('attendingTime', e.target.value)}
+          value={values.attendingTime}
           className="w-full"
         >
           <Space direction="vertical" className="w-full">
@@ -64,6 +72,11 @@ const StarRank = (props) => {
             </Radio>
           </Space>
         </Radio.Group>
+        <ErrorMessage
+          name="attendingTime"
+          component="div"
+          className="text-red-500 text-sm mt-1 font-primary font-bold"
+        />
       </div>
       {/* stars section */}
       <div className="flex justify-start items-center">
@@ -125,6 +138,11 @@ const StarRank = (props) => {
           </div>
         </div>
       </Radio.Group>
+      <ErrorMessage
+        name="starRank"
+        component="div"
+        className="text-red-500 text-sm mt-1 font-primary font-bold"
+      />
     </div>
   );
 };

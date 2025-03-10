@@ -8,7 +8,10 @@ import BasicDetails from './BasicDetails';
 import StarRank from './StarRank';
 import PhotoFrame from './PhotoFrame';
 import { useNavigate } from 'react-router';
-import { basicDetailsValidationSchema } from './validationSchemas';
+import {
+  basicDetailsValidationSchema,
+  starRankValidationSchema,
+} from './validationSchemas';
 
 const MainForm = () => {
   const [loading, setLoading] = useState(false);
@@ -57,6 +60,7 @@ const MainForm = () => {
     attendingTime: '',
     starRank: '',
     photoFrames: [],
+    confirmDetails: false,
   };
 
   const handleCancel = () => {
@@ -66,7 +70,10 @@ const MainForm = () => {
       navigate(-1);
     }
   };
-  const validationSchemas = [basicDetailsValidationSchema];
+  const validationSchemas = [
+    basicDetailsValidationSchema,
+    starRankValidationSchema,
+  ];
   return (
     <div>
       <Spin spinning={loading} tip="submiting..">

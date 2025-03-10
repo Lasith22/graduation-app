@@ -24,3 +24,21 @@ export const basicDetailsValidationSchema = yup.object().shape({
 
   homeAddress: yup.string().required('Home Address is required'),
 });
+
+export const starRankValidationSchema = yup.object().shape({
+  attendingDate: yup
+    .string()
+    .required('Please select a date to attend the event'),
+
+  attendingTime: yup
+    .string()
+    .required('Please select a time to attend the event'),
+
+  starRank: yup
+    .string()
+    .required('Please select a Star Rank option')
+    .oneOf(
+      ['Star', 'Silver', 'Golden', 'Diamond'],
+      'Please select a valid Star Rank'
+    ),
+});
