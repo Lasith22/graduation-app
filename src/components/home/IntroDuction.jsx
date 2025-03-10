@@ -1,6 +1,7 @@
 import React from 'react';
-
+import { useNavigate } from 'react-router';
 const IntroDuction = () => {
+  const navigate = useNavigate();
   return (
     <div className="bg-[#F3F3F3] p-[30px]">
       <div className="flex flex-col gap-5 md:gap-10 justify-center items-center ">
@@ -30,6 +31,7 @@ const IntroDuction = () => {
         </h1>
         <button
           type="submit"
+          onClick={() => navigate('/form')}
           className="flex justify-center items-center h-[34px] rounded-[4px] p-[12px] md:p-[18px] md:w-[400px] gap-[10px] bg-[#46ADC2] text-[#FFF] font-primary text-[16px] font-bold cursor-pointer"
         >
           Fill the Application
