@@ -8,6 +8,7 @@ import BasicDetails from './BasicDetails';
 import StarRank from './StarRank';
 import PhotoFrame from './PhotoFrame';
 import { useNavigate } from 'react-router';
+import { basicDetailsValidationSchema } from './validationSchemas';
 
 const MainForm = () => {
   const [loading, setLoading] = useState(false);
@@ -52,6 +53,10 @@ const MainForm = () => {
     whatsappNumber: '',
     examNumber: '',
     homeAddress: '',
+    attendingDate: '',
+    attendingTime: '',
+    starRank: '',
+    photoFrames: [],
   };
 
   const handleCancel = () => {
@@ -61,10 +66,12 @@ const MainForm = () => {
       navigate(-1);
     }
   };
+  const validationSchemas = [basicDetailsValidationSchema];
   return (
     <div>
       <Spin spinning={loading} tip="submiting..">
         <Formik
+          validationSchema={validationSchemas[activeStep]}
           initialValues={initialValues}
           onSubmit={(values, { resetForm }) =>
             addDataToFirestore(values, resetForm)

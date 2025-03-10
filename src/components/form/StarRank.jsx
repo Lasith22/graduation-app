@@ -18,7 +18,10 @@ const StarRank = (props) => {
           ඔබ උත්සවයට සහභාගීවන දවස
           <span className="text-red-500 mx-1 text-2xl">*</span>
         </label>
-        <Radio.Group className="w-full">
+        <Radio.Group
+          onChange={(e) => setFieldValue('attendingDate', e.target.value)}
+          className="w-full"
+        >
           <Space direction="vertical" className="w-full">
             <Radio value="2025-04-17">
               <div className="py-1 px-3 bg-gray-100 rounded text-gray-700 inline-block">
@@ -44,7 +47,10 @@ const StarRank = (props) => {
           මෙම ඡායාරූපය ලබා ගැනීමට අවශ්‍යෙ සිසුන් දෙමවුපියන් සමග උත්සවය ආරම්බ
           කිරීමට පැය දෙකකට පෙර ඡායාරූප ගන්නා ස්ථානය වෙත පැමිණෙන්න,
         </p>
-        <Radio.Group className="w-full">
+        <Radio.Group
+          onChange={(e) => setFieldValue('attendingTime', e.target.value)}
+          className="w-full"
+        >
           <Space direction="vertical" className="w-full">
             <Radio value="morning">
               <div className="py-1 px-3 bg-gray-100 rounded text-gray-700 inline-block">
@@ -76,7 +82,9 @@ const StarRank = (props) => {
             className="flex flex-col items-center gap-3 cursor-pointer"
           >
             <img src={StarRankImage1} alt="" />
-            <h1 className="text-2xl font-primary font-semibold">Star Rank</h1>
+            <h1 className="md:text-2xl text-xl font-primary font-semibold">
+              Star Rank
+            </h1>
             <Radio value="Star" />
           </div>
 
@@ -86,7 +94,9 @@ const StarRank = (props) => {
             className="flex flex-col items-center gap-3 cursor-pointer"
           >
             <img src={StarRankImage2} alt="" />
-            <h1 className="text-2xl font-primary font-semibold">Silver Rank</h1>
+            <h1 className="md:text-2xl text-xl  font-primary font-semibold">
+              Silver Rank
+            </h1>
             <Radio value="Silver" />
           </div>
 
@@ -96,7 +106,9 @@ const StarRank = (props) => {
             className="flex flex-col items-center gap-3 cursor-pointer"
           >
             <img src={StarRankImage3} alt="" />
-            <h1 className="text-2xl font-primary font-semibold">Golden Rank</h1>
+            <h1 className="md:text-2xl text-xl  font-primary font-semibold">
+              Golden Rank
+            </h1>
             <Radio value="Golden" />
           </div>
 
@@ -106,7 +118,7 @@ const StarRank = (props) => {
             className="flex flex-col items-center gap-3 cursor-pointer"
           >
             <img src={StarRankImage4} alt="" />
-            <h1 className="text-2xl font-primary font-semibold">
+            <h1 className="md:text-2xl text-xl font-primary font-semibold">
               Diamond Rank
             </h1>
             <Radio value="Diamond" />

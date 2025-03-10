@@ -1,5 +1,6 @@
 import { Input } from 'antd';
 import React from 'react';
+import { ErrorMessage } from 'formik';
 
 const BasicDetails = (props) => {
   const { setFieldValue, values } = props;
@@ -24,11 +25,16 @@ const BasicDetails = (props) => {
       <div className="flex flex-col gap-[14px]">
         <h1 className={labelClass}>Student's Name</h1>
         <Input
-          value={values.eventName}
+          value={values.studentName}
           onChange={(value) => setFieldValue('studentName', value.target.value)}
           placeholder="John Smith"
           className={inputClass}
           style={inputStyle}
+        />
+        <ErrorMessage
+          name="studentName"
+          component="div"
+          className="text-red-500 text-sm mt-1 font-primary font-bold"
         />
       </div>
 
@@ -41,6 +47,11 @@ const BasicDetails = (props) => {
           placeholder="07X XXX XXXX"
           className={inputClass}
           style={inputStyle}
+        />
+        <ErrorMessage
+          name="phoneNumber"
+          component="div"
+          className="text-red-500 text-sm mt-1 font-primary font-bold"
         />
       </div>
 
@@ -58,6 +69,11 @@ const BasicDetails = (props) => {
           className={inputClass}
           style={inputStyle}
         />
+        <ErrorMessage
+          name="whatsappNumber"
+          component="div"
+          className="text-red-500 text-sm mt-1 font-primary font-bold"
+        />
       </div>
 
       {/* Exam Number from School (පාසලෙන් ලබා දුන් විභාග අංකය) - Required */}
@@ -72,6 +88,11 @@ const BasicDetails = (props) => {
           className={inputClass}
           style={inputStyle}
         />
+        <ErrorMessage
+          name="examNumber"
+          component="div"
+          className="text-red-500 text-sm mt-1 font-primary font-bold"
+        />
       </div>
 
       {/* Home Address (නිවසේ ලිපිනය) */}
@@ -84,6 +105,11 @@ const BasicDetails = (props) => {
           className={inputClass}
           style={{ ...inputStyle, height: 'auto', minHeight: '80px' }}
           rows={3}
+        />
+        <ErrorMessage
+          name="homeAddress"
+          component="div"
+          className="text-red-500 text-sm mt-1 font-primary font-bold"
         />
       </div>
     </div>
