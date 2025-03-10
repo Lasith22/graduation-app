@@ -30,7 +30,7 @@ const IntroDuction = () => {
         </h1>
         <button
           type="submit"
-          className="flex justify-center items-center h-[34px] rounded-[4px] p-[12px] gap-[10px] bg-[#46ADC2] text-[#FFF] font-primary text-[18px] font-bold cursor-pointer"
+          className="flex justify-center items-center h-[34px] rounded-[4px] p-[12px] md:p-[18px] md:w-[400px] gap-[10px] bg-[#46ADC2] text-[#FFF] font-primary text-[16px] font-bold cursor-pointer"
         >
           Fill the Application
         </button>
