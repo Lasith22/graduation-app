@@ -27,6 +27,11 @@ const PhotoFrame = (props) => {
         <Checkbox value="family">Family Photo 12X17 With Frame</Checkbox>
         <Checkbox value="other">Other Per one 12X17 With Frame</Checkbox>
       </Checkbox.Group>
+      <ErrorMessage
+        name="photoFrames"
+        component="div"
+        className="text-red-500 text-sm mt-1 font-primary font-bold"
+      />
 
       <div className="mt-8 mb-6 border-t pt-6 border-gray-200">
         <div className="font-primary">
@@ -53,7 +58,7 @@ const PhotoFrame = (props) => {
           <ErrorMessage
             name="confirmDetails"
             component="div"
-            className="text-red-500 text-sm mt-1 font-mainTextStyle font-custom"
+            className="text-red-500 text-sm mt-1 font-primary font-bold"
           />
         </div>
       </div>

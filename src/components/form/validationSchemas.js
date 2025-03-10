@@ -42,3 +42,17 @@ export const starRankValidationSchema = yup.object().shape({
       'Please select a valid Star Rank'
     ),
 });
+
+export const photoFrameValidationSchema = yup.object().shape({
+  // Photo frames - must select at least one option
+  photoFrames: yup
+    .array()
+    .min(1, 'Please select at least one photo frame option')
+    .required('Please select at least one photo frame option'),
+
+  // Confirmation checkbox
+  confirmDetails: yup
+    .boolean()
+    .oneOf([true], 'You must confirm that all details are correct')
+    .required('You must confirm that all details are correct'),
+});

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, message, Spin } from 'antd';
+import { message, Spin } from 'antd';
 import { Formik, Form } from 'formik';
 import { db } from '../../firebase';
 import { doc, setDoc } from 'firebase/firestore';
@@ -10,6 +10,7 @@ import PhotoFrame from './PhotoFrame';
 import { useNavigate } from 'react-router';
 import {
   basicDetailsValidationSchema,
+  photoFrameValidationSchema,
   starRankValidationSchema,
 } from './validationSchemas';
 
@@ -22,32 +23,47 @@ const MainForm = () => {
   const addDataToFirestore = async (values, resetForm) => {
     setLoading(true);
 
-    if (activeStep == 0) {
+    if (activeStep == 0 && basicDetailsValidationSchema.isValidSync(values)) {
       setActiveStep(1);
-    } else if (activeStep == 1) {
+      setLoading(false);
+    } else if (
+      activeStep == 1 &&
+      starRankValidationSchema.isValidSync(values)
+    ) {
       setActiveStep(2);
+      setLoading(false);
+    } else if (
+      activeStep === 2 &&
+      photoFrameValidationSchema.isValidSync(values)
+    ) {
+      try {
+        const docRef = doc(db, 'studentGraduationPhotos', values.examNumber);
+        await setDoc(docRef, {
+          studentName: values.studentName,
+          phoneNumber: values.phoneNumber,
+          whatsappNumber: values.whatsappNumber,
+          examNumber: values.examNumber,
+          homeAddress: values.homeAddress,
+          attendingDate: values.attendingDate,
+          attendingTime: values.attendingTime,
+          starRank: values.starRank,
+          photoFrames: values.photoFrames,
+          confirmDetails: values.confirmDetails,
+        });
+        setIsModalVisible(true);
+      } catch (error) {
+        console.error('Error adding document: ', error);
+        message.error(`Error submitting form: ${error.message}`);
+      } finally {
+        setLoading(false);
+      }
     }
     console.log(values);
-    try {
-      // const docRef = doc(db, 'studentGraduationPhotos', values.examNumber);
-      // await setDoc(docRef, {
-      //   studentName: values.studentName,
-      //   phoneNumber: values.phoneNumber,
-      //   whatsappNumber: values.whatsappNumber,
-      //   examNumber: values.examNumber,
-      //   homeAddress: values.homeAddress,
-      // });
-      // setIsModalVisible(true);
-    } catch (error) {
-      console.error('Error adding document: ', error);
-      message.error(`Error submitting form: ${error.message}`);
-    } finally {
-      setLoading(false);
-    }
   };
 
   const handleModalClose = () => {
     setIsModalVisible(false);
+    navigate('/');
   };
 
   const initialValues = {
@@ -73,6 +89,7 @@ const MainForm = () => {
   const validationSchemas = [
     basicDetailsValidationSchema,
     starRankValidationSchema,
+    photoFrameValidationSchema,
   ];
   return (
     <div>
