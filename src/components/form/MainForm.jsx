@@ -55,23 +55,22 @@ const MainForm = () => {
         >
           {({ values, setFieldValue }) => (
             <Form>
-              <div className="my-[40px] px-[60px] py-[40px] bg-[#fff] rounded-[24px]">
+              <div className="my-[40px] px-[20px] py-[40px] bg-[#fff] rounded-[24px]">
                 {activeStep === 0 && (
                   <BasicDetails setFieldValue={setFieldValue} values={values} />
                 )}
+                {/* submit button */}
+                <button
+                  type="submit"
+                  className="bg-[#2352D8] text-white font-primary font-bold text-[18px] py-[15px] rounded-[8px] transition-all"
+                  style={{
+                    cursor: 'pointer',
+                    border: 'none',
+                  }}
+                >
+                  Submit
+                </button>
               </div>
-
-              {/* submit button */}
-              <button
-                type="submit"
-                className="bg-[#2352D8] text-white font-primary font-bold text-[18px] py-[15px] rounded-[8px] transition-all"
-                style={{
-                  cursor: 'pointer',
-                  border: 'none',
-                }}
-              >
-                Submit
-              </button>
             </Form>
           )}
         </Formik>

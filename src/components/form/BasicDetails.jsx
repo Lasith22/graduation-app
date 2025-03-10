@@ -20,7 +20,7 @@ const BasicDetails = (props) => {
   return (
     <div className="flex flex-col gap-[24px]">
       {/* Student's Name */}
-      <div className="flex flex-col gap-[16px]">
+      <div className="flex flex-col gap-[14px]">
         <h1 className={labelClass}>Student's Name</h1>
         <Input
           value={values.eventName}
