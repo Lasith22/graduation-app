@@ -9,10 +9,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/form" element={<Form />} />
       </Routes>
-
-      {/* <div className=" min-h-screen bg-[#F7F9FA] p-[30px]">
-        <MainForm />
-      </div> */}
     </>
   );
 }
