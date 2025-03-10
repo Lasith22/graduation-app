@@ -1,10 +1,9 @@
 import { Modal } from 'antd';
 import React from 'react';
 import SuccessIcon from '../../assets/SuccessIcon.svg';
-import { useNavigate } from 'react-router';
+
 const SuccessModal = (props) => {
   const { isModalVisible, handleModalClose, confirmMsg } = props;
-  const navigate = useNavigate();
 
   return (
     <Modal
