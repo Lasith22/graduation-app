@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Input, message, Spin } from 'antd';
 import { Formik, Form } from 'formik';
-import { db } from '../firebase';
+import { db } from '../../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import SuccessModal from './SuccessModal';
 

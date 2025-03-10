@@ -1,6 +1,6 @@
 import { Modal } from 'antd';
 import React from 'react';
-import SuccessIcon from '../assets/SuccessIcon.svg';
+import SuccessIcon from '../../assets/SuccessIcon.svg';
 const SuccessModal = (props) => {
   const { isModalVisible, handleModalClose, confirmMsg } = props;
   return (
