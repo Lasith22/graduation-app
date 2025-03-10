@@ -1,5 +1,9 @@
 import React from 'react';
 import { Radio, Space } from 'antd';
+import StarRankImage1 from '../../assets/starRanks/Star1.png';
+import StarRankImage2 from '../../assets/starRanks/Star2.png';
+import StarRankImage3 from '../../assets/starRanks/Star3.png';
+import StarRankImage4 from '../../assets/starRanks/Star4.png';
 
 const StarRank = () => {
   return (
@@ -52,10 +56,39 @@ const StarRank = () => {
         </Radio.Group>
       </div>
 
-      <div className="flex justify-start   items-center">
+      <div className="flex justify-start items-center">
         <h1 className=" text-2xl">Stars Rank</h1>{' '}
         <span className="text-red-500 mx-1 text-2xl">*</span>
       </div>
+      <Radio.Group>
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-4 mt-10">
+          <div className="flex flex-col items-center gap-3">
+            <img src={StarRankImage1} alt="" />
+
+            <h1 className="text-2xl font-primary font-semibold">Star Rank</h1>
+            <Radio />
+          </div>
+
+          <div className="flex flex-col items-center gap-3">
+            <img src={StarRankImage2} alt="" />
+
+            <h1 className="text-2xl font-primary font-semibold">Star Rank</h1>
+            <Radio />
+          </div>
+          <div className="flex flex-col items-center gap-3">
+            <img src={StarRankImage3} alt="" />
+
+            <h1 className="text-2xl font-primary font-semibold">Star Rank</h1>
+            <Radio />
+          </div>
+          <div className="flex flex-col items-center gap-3">
+            <img src={StarRankImage4} alt="" />
+
+            <h1 className="text-2xl font-primary font-semibold">Star Rank</h1>
+            <Radio />
+          </div>
+        </div>
+      </Radio.Group>
     </div>
   );
 };
