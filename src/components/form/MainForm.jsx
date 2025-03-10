@@ -60,16 +60,23 @@ const MainForm = () => {
                   <BasicDetails setFieldValue={setFieldValue} values={values} />
                 )}
                 {/* submit button */}
-                <button
-                  type="submit"
-                  className="bg-[#2352D8] text-white font-primary font-bold text-[18px] py-[15px] rounded-[8px] transition-all"
-                  style={{
-                    cursor: 'pointer',
-                    border: 'none',
-                  }}
-                >
-                  Submit
-                </button>
+                <div className="mt-[40px]  flex justify-between md:justify-normal items-center gap-[12px]">
+                  <button
+                    type="button"
+                    className="flex justify-center items-center w-full md:w-[86px] h-[34px] rounded-[4px] p-[12px] border-[#707E8C] border text-[#707E8C] font-primary text-[14px] font-bold  cursor-pointer"
+                  >
+                    Cancel
+                  </button>
+
+                  <button
+                    type="submit"
+                    className={`flex justify-center items-center w-full 
+                        md:w-[86px] 
+                     h-[34px] rounded-[4px] p-[12px] gap-[10px] bg-[#2352D8] text-[#FFF] font-primary text-[14px] font-bold cursor-pointer`}
+                  >
+                    {activeStep === 2 ? 'Submit' : 'Next'}
+                  </button>
+                </div>
               </div>
             </Form>
           )}
